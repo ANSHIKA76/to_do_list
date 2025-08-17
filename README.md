@@ -25,7 +25,7 @@ Includes **Light & Dark Mode**, task completion, and delete functionality.
 
 ## 🛠️ Tech Stack
 - **React.js**
-- **CSS (custom, no Tailwind used)**
+- **CSS**
 
 ---
 
