@@ -1,38 +1,191 @@
-.App {
+/* --------------------
+   Base Styles
+-------------------- */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.app {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 20px;
+  border-radius: 10px;
   text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin-bottom: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* --------------------
+   Input Area
+-------------------- */
+.input-area {
   display: flex;
-  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+.input-area button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+/* --------------------
+   To-Do List
+-------------------- */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  transition: background 0.2s ease;
 }
 
-.App-link {
-  color: #61dafb;
+li span {
+  flex: 1;
+  text-align: left;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+li.completed span {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/* Delete button */
+.delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+  transition: color 0.2s ease;
+}
+
+/* --------------------
+   Theme Toggle
+-------------------- */
+.theme-btn {
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+/* --------------------
+   Light Theme
+-------------------- */
+body.light {
+  background: #f9fafb;
+  color: #1e293b;
+}
+
+body.light .app {
+  background: #ffffff;
+}
+
+body.light .input-area input {
+  border: 1px solid #d1d5db;
+}
+
+body.light .input-area button,
+body.light .theme-btn {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+body.light .input-area button:hover,
+body.light .theme-btn:hover {
+  background: #1d4ed8;
+}
+
+body.light li {
+  background: #f3f4f6;
+}
+
+body.light li:hover {
+  background: #e5e7eb;
+}
+
+body.light .delete-btn {
+  color: #ef4444;
+}
+
+body.light .delete-btn:hover {
+  color: #dc2626;
+}
+
+/* --------------------
+   Dark Theme
+-------------------- */
+body.dark {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+body.dark .app {
+  background: #1e293b;
+}
+
+body.dark .input-area input {
+  background: #334155;
+  border: 1px solid #475569;
+  color: #f8fafc;
+}
+
+body.dark .input-area button,
+body.dark .theme-btn {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+body.dark .input-area button:hover,
+body.dark .theme-btn:hover {
+  background: #0ea5e9;
+  color: #ffffff;
+}
+
+body.dark li {
+  background: #334155;
+}
+
+body.dark li:hover {
+  background: #475569;
+}
+
+body.dark .delete-btn {
+  color: #f87171;
+}
+
+body.dark .delete-btn:hover {
+  color: #ef4444;
 }
